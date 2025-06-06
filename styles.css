@@ -8,21 +8,8 @@
   padding: 5px 10px;
 }
 
-.top .log {
-  float: left;
-  padding: 5px 10px;
-  margin-right: 50px;
-  display: block;
-}
-
 .top img {
-  height: 50%;
-  vertical-align: middle;
-}
-
-.top nav {
-  float: left;
-  display: flex;
+  width: 20%;
 }
 
 .top a {
