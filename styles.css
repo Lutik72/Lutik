@@ -1,4 +1,3 @@
-
 /* header */
 .top {
   overflow: hidden;
@@ -45,15 +44,6 @@
   transform: scale(1.05);
 }
 
-/* паралакс */
-.paralax {
-  background-image: url("pictures/menu.jpg");
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .centerText {
   position: absolute;
   top: 30%;
