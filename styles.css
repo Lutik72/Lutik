@@ -50,13 +50,14 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.paralax h1 {
+h1 {
+  margin-top: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #2e1c12;
 }
-.paralax p {
+p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: white;
+  color: black;
 }
 
 .container {
