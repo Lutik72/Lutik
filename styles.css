@@ -1,1 +1,127 @@
 
+/* header */
+.top {
+  overflow: hidden;
+  background-color: #D2B48C;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.top .log {
+  float: left;
+  padding: 5px 10px;
+  margin-right: 50px;
+  display: block;
+}
+
+.top img {
+  height: 100%;
+  vertical-align: middle;
+}
+
+.top nav {
+  float: left;
+  display: flex;
+}
+
+.top a {
+  float: left;
+  display: block;
+  color: #FFF5EE;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 17px;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.top a:hover {
+  color: #5d3b27;
+  transform: scale(1.05);
+}
+
+/* паралакс */
+.paralax {
+  background-image: url("pictures/menu.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.centerText {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.paralax h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #2e1c12;
+}
+.paralax p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+}
+
+.container {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+  height: 250px;
+}
+.container h1 {
+  color: #5d3b27;
+}
+.container img {
+  border-radius: 100%;
+}
+.table {
+  margin-top: 100px
+}
+.card {
+  margin: 0;
+  padding: 10px;
+}
+
+footer p {
+  color: rgb(156, 156, 156);
+  text-align: center;
+}
+footer .card h1 {
+  color: #5d3b27;
+}
+footer {
+  width: auto;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 20px;
+  background-color: #fff7e8;
+  padding: 20px;
+  box-sizing: border-box;
+}
+footer .card {
+  background-color: #fff7e8;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  box-sizing: border-box;
+}
+footer p {
+  color: rgb(156, 156, 156);
+  text-align: left;
+  font-size: 14px;
+  margin-left: 0;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  padding-right: 30px;
+}
