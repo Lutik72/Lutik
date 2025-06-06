@@ -4,32 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
-        <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body>
 
 <div class="top">
-        <img src="pictures/log.png" class="log">
-</div>
-
-<div class="container">
-    <div class="card">
-<br>
-        <h1 align="right">О нас</h1>
-        <p align="right"><font color="gray" size="3"><left>Мы новая сеть кафе, где кофе становится настоящим искусством! Мы гордимся нашей командой бариста и пекарей, 
-            которые являются мастерами своего дела. Их страсть и амбиции вдохновляют нас каждый день стремиться к совершенству. В нашем меню вы найдете не только классические сорта кофе, но и авторские напитки, созданные с любовью и вниманием к деталям.</font></p>
+        <img src="log.png" class="log">
     </div>
-</div>
 <br><br><br>
-<div class="container">
-    <div class="card"><h1>Не Только Кофе</h1>
-        <p align="left"><font color="gray" size="3"><left>Мы предлагаем не только ароматный кофе, но и разнообразные напитки на любой вкус.
-Насладитесь освежающим лимонадом с ярким вкусом лета или раскройте для себя магию бабл-ти с его уникальными текстурами и вкусами.</font></p>
-    </div>
-</div>
-<br>
-    
 <form>
     <h3>Какой кофе вы любите?</h3>
     <select>
@@ -42,16 +25,20 @@
     </select>
 
     <h3>Любимый сироп</h3>
-    <label><input type="radio" name="syrup"> Карамель</label>  
-    <label><input type="radio" name="syrup"> Ваниль</label>  
-    <label><input type="radio" name="syrup"> Шоколад</label><br/>
-    <label><input type="radio" name="syrup"> Кокос</label>  
-    <label><input type="radio" name="syrup"> Банан</label>  
-    <label><input type="radio" name="syrup"> Орех</label>
+    <select>
+        <option>Карамель</option>
+        <option>Ваниль</option>
+        <option>Шоколад</option>
+        <option>Кокос</option>
+        <option>Лесной орех</option>
+        <option>Имбирный пряник</option>
+    </select>
+
 
     <button onclick="showAlert(); return false;">Выбрать</button>
 </form>
-    
+
+<br>
 <footer class="footer">
         <div class="card">
             <h1>COFFEE AREA</h1>
@@ -61,7 +48,7 @@
         </div>
         <div class="card">
             <h1>Адрес</h1>
-            <p><br>Наро-Фоминск, площадь Свободы 2к1, ТЦ Воскресенский пассаж</p>
+            <p><br>---</p>
             <h1>Контакты</h1><br>
             <p>+7 965 155 76 32<br>
                 coffee.area@yandex.ru</p>
