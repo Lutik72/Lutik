@@ -10,15 +10,10 @@
 <body>
 <br>
 <form>
-    <h3>Какой кофе вы любите?</h3>
-    <select>
-        <option>Эспрессо</option>
-        <option>Американо</option>
-        <option>Капучино</option>
-        <option>Латте</option>
-        <option>Аффогато</option>
-        <option>Гляссе</option>
-    </select>
+    <h3>Какой напиток вам нравится?</h3>
+<button id="1">Капучино</button>
+<button id="2">Латте</button>
+<button id="3">Горячий шоколад</button>
 
     <h3>Любимый сироп</h3>
     <select>
@@ -31,27 +26,7 @@
     </select>
 
 
-    <button onclick="showAlert(); return false;">Выбрать</button>
-
-<button id="1">Капучино</button>
-<button id="2">Латте</button>
-<button id="3">Горячий шоколад</button>
-
-<script>
-    let btn1 = document.getElementById('1');
-    let btn2 = document.getElementById('2');
-    let btn3 = document.getElementById('3');
-    btn1.addEventListener('click', function()
-    { console.log('Выбран капучино');
-    }); 
-    btn2.addEventListener('click', function() 
-    { console.log('Выбран латте'); 
-    }); 
-    btn3.addEventListener('click', function() 
-    { console.log('Выбран горячий шоколад');
-    });
-    
+<button onclick="showAlert(); return false;">Выбрать</button>
 </form>
-    <br>
 </body>
 </html>
