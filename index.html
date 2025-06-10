@@ -32,6 +32,25 @@
 
 
     <button onclick="showAlert(); return false;">Выбрать</button>
+
+<button id="1">Капучино</button>
+<button id="2">Латте</button>
+<button id="3">Горячий шоколад</button>
+
+<script>
+    let btn1 = document.getElementById('1');
+    let btn2 = document.getElementById('2');
+    let btn3 = document.getElementById('3');
+    btn1.addEventListener('click', function()
+    { console.log('Выбран капучино');
+    }); 
+    btn2.addEventListener('click', function() 
+    { console.log('Выбран латте'); 
+    }); 
+    btn3.addEventListener('click', function() 
+    { console.log('Выбран горячий шоколад');
+    });
+    
 </form>
     <br>
 </body>
