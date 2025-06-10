@@ -1,32 +1,5 @@
 /* header */
-.top {
-  overflow: hidden;
-  background-color: #D2B48C;
-  top: 0;
-  width: 100%;
-  align-items: center;
-  padding: 5px 10px;
-}
 
-.top img {
-  width: 20%;
-}
-
-.top a {
-  float: left;
-  display: block;
-  color: #FFF5EE;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 17px;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: none;
-}
-
-.top a:hover {
-  color: #5d3b27;
-  transform: scale(1.05);
-}
 
 h1 {
   margin-top: 20px;
@@ -36,43 +9,6 @@ h1 {
 p {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: black;
-}
-
-footer p {
-  color: rgb(156, 156, 156);
-  text-align: center;
-}
-footer .card h1 {
-  color: #5d3b27;
-}
-footer {
-  width: auto;
-  margin: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 20px;
-  background-color: #fff7e8;
-  padding: 20px;
-  box-sizing: border-box;
-}
-footer .card {
-  background-color: #fff7e8;
-  padding: 15px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  box-sizing: border-box;
-}
-footer p {
-  color: rgb(156, 156, 156);
-  text-align: left;
-  font-size: 14px;
-  margin-left: 0;
-  grid-column: 1 / -1;
-  grid-row: 2;
-  padding-right: 30px;
 }
 
 form {
