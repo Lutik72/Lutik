@@ -1,15 +1,47 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 </head>
 <body>
+
+<div class="cart-box">
+    <div class="item">
+        <img src="Shop/img/item3.png" alt="1 товар" class="item-img">
+        <div class="item-content">
+            <h3 class="item-heading"><b>MANGO PEOPLE T-SHIRT</b></h3>
+            <p class="item-text">Price: <span class="item-color">$300</span></p>
+            <p class="item-text">Color: Red</p>
+            <p class="item-text">Size: XL</p>
+            <div class="item-text">Quantity: <input type="text" value="2" class="item-input"></div>
+        </div>
+    </div>
+</div>
+
+<script src="data.js"></script>
 <script>
-    
+    const data = JSON.parse(dataProducts);
+
+    const cartBox = document.querySelector('.cart-box')
+
+    data.forEach(element => {
+    const itemEL = document.createElement('div');
+    itemEL.classList.add('item');
+
+    const itemImg = document.createElement('img')
+    itemImg.classList.add('item-img');
+    itemImg.src = element.url;
+
+    cartBox.appendChild(itemEL);
+    itemEL.appendChild(itemImg);
+    });
 </script>
 
 </body>
