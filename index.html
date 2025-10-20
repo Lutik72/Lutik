@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
 </head>
+
 <body>
 
 <div class="cart-box">
     <div class="item">
-        <img src="Shop/img/item3.png" alt="1 товар" class="item-img">
+        <img src="Shop/img/item3.png" alt="1 товар">
         <div class="item-content">
             <h3 class="item-heading"><b>MANGO PEOPLE T-SHIRT</b></h3>
             <p class="item-text">Price: <span class="item-color">$300</span></p>
@@ -27,21 +29,84 @@
 
 <script src="data.js"></script>
 <script>
-    const data = JSON.parse(dataProducts);
 
-    const cartBox = document.querySelector('.cart-box')
+const data = JSON.parse(dataProducts);
+            
+            // СОЗДАЕМ НОВЫЙ КОНТЕЙНЕР вместо использования существующего
+            const dynamicCartBox = document.createElement('div');
+            dynamicCartBox.classList.add('cart-box');
+            
+            // Добавляем новый контейнер после существующего
+            const existingCartBox = document.querySelector('.cart-box');
+            existingCartBox.parentNode.insertBefore(dynamicCartBox, existingCartBox.nextSibling);
 
-    data.forEach(element => {
-    const itemEL = document.createElement('div');
-    itemEL.classList.add('item');
+            data.forEach(element => {
 
-    const itemImg = document.createElement('img')
-    itemImg.classList.add('item-img');
-    itemImg.src = element.url;
 
-    cartBox.appendChild(itemEL);
-    itemEL.appendChild(itemImg);
-    });
+                // Создаем основной контейнер товара
+                const itemEl = document.createElement('div');
+                itemEl.classList.add('item');
+
+                // Создаем изображение товара
+                const itemImg = document.createElement('img');
+                itemImg.src = element.url;
+                itemImg.alt = element.name;
+
+                // Создаем контейнер для контента товара
+                const itemContent = document.createElement('div');
+                itemContent.classList.add('item-content');
+
+                // Создаем заголовок товара
+                const itemHeading = document.createElement('h3');
+                itemHeading.classList.add('item-heading');
+                itemHeading.innerHTML = `<b>${element.name}</b>`;
+
+                // Создаем блок с ценой
+                const itemPrice = document.createElement('p');
+                itemPrice.classList.add('item-text');
+                itemPrice.innerHTML = `Price: <span class="item-color">$${element.price}</span>`;
+
+                // Создаем блок с цветом
+                const itemColor = document.createElement('p');
+                itemColor.classList.add('item-text');
+                itemColor.textContent = `Color: ${element.color}`;
+
+                // Создаем блок с размером
+                const itemSize = document.createElement('p');
+                itemSize.classList.add('item-text');
+                itemSize.textContent = `Size: ${element.size}`;
+
+                // Создаем блок с количеством и полем ввода
+                const itemQuantity = document.createElement('div');
+                itemQuantity.classList.add('item-text');
+                
+                const quantityInput = document.createElement('input');
+                quantityInput.type = 'text';
+                quantityInput.value = element.quantity;
+                quantityInput.classList.add('item-input');
+                
+                itemQuantity.textContent = 'Quantity: ';
+                itemQuantity.appendChild(quantityInput);
+
+                // Собираем структуру карточки
+                itemContent.appendChild(itemHeading);
+                itemContent.appendChild(itemPrice);
+                itemContent.appendChild(itemColor);
+                itemContent.appendChild(itemSize);
+                itemContent.appendChild(itemQuantity);
+
+                itemEl.appendChild(itemImg);
+                itemEl.appendChild(itemContent);
+                
+                // Добавляем готовую карточку в НОВЫЙ контейнер
+                dynamicCartBox.appendChild(itemEl);
+            });
+
+</script>
+
+</body>
+</html>
+        
 </script>
 
 </body>
