@@ -1,44 +1,62 @@
 * {
   margin: 0;
   padding: 0;
-
 }
+
 .body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .cart-box {
-padding: 64px;
+  padding: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; /* Центрируем карточки */
 }
-.item{
-  width: 652px;
+
+.item {
+  width: 400px; /* Уменьшаем ширину для лучшего отображения в строке */
   box-shadow: 17px 19px 24px 0px #00000021;
   display: flex;
+  flex-direction: column; /* Меняем направление flex на колонку */
 }
-.item-content{
+
+.item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.item-content {
   padding: 22px 31px;
   background: #FFFFFF;
+  flex-grow: 1;
 }
-.item-heading{
+
+.item-heading {
   margin-top: 15px;
-  width: 262px;
+  width: 100%;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 20px; /* Немного уменьшаем шрифт */
+  line-height: 24px;
   color: #222222;
-  margin-bottom: 42px;
+  margin-bottom: 20px;
 }
-.item-text{
+
+.item-text {
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 26px;
+  font-size: 18px; /* Немного уменьшаем шрифт */
+  line-height: 22px;
   color: #575757;
   margin-bottom: 6px;
 }
-.item-input{
+
+.item-input {
   width: 44px;
   height: 24.95px;
   border: 1px solid #EAEAEA;
@@ -48,10 +66,7 @@ padding: 64px;
   box-sizing: border-box;
   margin-left: 24px;
 }
-.item-color{
+
+.item-color {
   color: #CA1C1D;
-}
-.item-img{
-width: 262;
-height: 306;
 }
