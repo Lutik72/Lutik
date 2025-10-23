@@ -5,7 +5,7 @@ const videoList = [
     },
     {
         "src": "videos/parrot.mp4",
-        "title": "Попугаи ара"
+        "title": "Попугайчик"
     }
 
 ];
