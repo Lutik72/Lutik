@@ -34,12 +34,20 @@
     <main>
         <center><h3>Остановись и посмотри милые видео <з</h3></center>
 
-    <div class="media-player">
+        <!-- Простой медиаплеер с каруселью -->
+        <div class="media-player">
             <div class="video-container">
+                <div class="video-title" id="videoTitle">Милый котенок</div>
+                <div class="video-counter" id="videoCounter">1/3</div>
                 <video id="myVideo">
-                    <!-- Замените src на путь к вашему видео -->
-                    <source src="img/Kitten_Cat.mp4" type="video/mp4">
+                    <!-- Видео будет меняться через JavaScript -->
                 </video>
+                
+                <!-- Стрелки для карусели -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">❮</button>
+                    <button class="carousel-btn" id="nextBtn">❯</button>
+                </div>
             </div>
             <div class="controls">
                 <button class="play-pause-btn" id="playBtn"></button>
@@ -49,62 +57,11 @@
                 </div>
                 <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
             </div>
-        </div> 
+        </div>
+
     </main>
 
-    <script>
-        // Получаем элементы со страницы
-        const video = document.getElementById('myVideo');
-        const playBtn = document.getElementById('playBtn');
-        const pauseBtn = document.getElementById('pauseBtn');
-        const progressBar = document.getElementById('progressBar');
-        const progressContainer = document.getElementById('progressContainer');
-        const timeDisplay = document.getElementById('timeDisplay');
-
-        // Функция для воспроизведения
-        playBtn.addEventListener('click', function() {
-            video.play();
-            playBtn.style.display = 'none';
-            pauseBtn.style.display = 'block';
-        });
-
-        // Функция для паузы
-        pauseBtn.addEventListener('click', function() {
-            video.pause();
-            pauseBtn.style.display = 'none';
-            playBtn.style.display = 'block';
-        });
-
-        // Обновление прогресс-бара и времени
-        video.addEventListener('timeupdate', function() {
-            // Обновляем прогресс-бар
-            const progress = (video.currentTime / video.duration) * 100;
-            progressBar.style.width = progress + '%';
-            
-            // Обновляем отображение времени
-            const currentMinutes = Math.floor(video.currentTime / 60);
-            const currentSeconds = Math.floor(video.currentTime % 60);
-            const durationMinutes = Math.floor(video.duration / 60);
-            const durationSeconds = Math.floor(video.duration % 60);
-            
-            timeDisplay.textContent = 
-                currentMinutes + ':' + (currentSeconds < 10 ? '0' : '') + currentSeconds + 
-                ' / ' + 
-                durationMinutes + ':' + (durationSeconds < 10 ? '0' : '') + durationSeconds;
-        });
-
-        // Перемотка при клике на прогресс-бар
-        progressContainer.addEventListener('click', function(e) {
-            const rect = progressContainer.getBoundingClientRect();
-            const pos = (e.clientX - rect.left) / rect.width;
-            video.currentTime = pos * video.duration;
-        });
-
-        // Сброс кнопок при окончании видео
-        video.addEventListener('ended', function() {
-            pauseBtn.style.display = 'none';
-            playBtn.style.display = 'block';
-        });
-    </script>
+    <script src="media_data.js"></script>
+    <script src="media_script.js"></script>
 </body>
 </html>
