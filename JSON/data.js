@@ -1,7 +1,7 @@
 // data.js (исправленная версия)
 const dataProducts = `[
 {
-"url": "Shop/img/item3.png",
+"url": "img/item3.png",
 "name": "MANGO PEOPLE T-SHIRT",
 "price": "300",
 "color": "Red",
@@ -9,7 +9,7 @@ const dataProducts = `[
 "quantity": "2"
 },
 {
-"url": "Shop/img/item2.png",
+"url": "img/item2.png",
 "name": "ELLERY X M'O CAPSULE",
 "price": "52",
 "color": "Black",
@@ -17,7 +17,7 @@ const dataProducts = `[
 "quantity": "1"
 },
 {
-"url": "Shop/img/item5.png",
+"url": "img/item5.png",
 "name": "SKY JACKET",
 "price": "100",
 "color": "Blue",
