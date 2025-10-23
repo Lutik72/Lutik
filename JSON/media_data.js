@@ -4,11 +4,8 @@ const videoList = [
         "title": "Милый котенок играет"
     },
     {
-        "src": "videos/puppy.mp4", 
-        "title": "Щенок резвится"
-    },
-    {
         "src": "videos/parrot.mp4",
         "title": "Попугаи ара"
     }
+
 ];
