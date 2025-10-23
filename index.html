@@ -11,12 +11,35 @@
 </head>
 <body>
 
-<div class="cart-box">
-    <!-- Карточки будут созданы динамически JavaScript -->
-</div>
+<header class="header">
+        <div class="container">
+            <div class="header-content">
+                <nav class="nav">
+                    <ul class="nav-list">
+    <li><a href="index.html" class="nav-link">Главная</a></li>
+    <li class="dropdown">
+        <p class="nav-link">Перейти на другую страницу</p>
+        <ul class="dropdown-menu">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+    </li>
+</ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<script src="data.js"></script>
-<script src="script.js"></script>
+    <main> <!-- Основное содержимое страницы -->
+        
+         <div class="cart-box"><!-- Карточки будут созданы динамически JavaScript --></div>
+
+         <script src="data.js"></script>
+         <script src="script.js"></script>
+    </main>
+
+
 
 </body>
 </html>
