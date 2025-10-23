@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript и JSON: Медиаплеер</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="media_style.css">
+</head>
+<body>
+
+<header class="header">
+        <div class="container">
+            <div class="header-content">
+                <nav class="nav">
+                    <ul class="nav-list">
+    <li><a href="../index.html" class="nav-link">Главная</a></li>
+    <li class="dropdown">
+        <p class="nav-link">Перейти на другую страницу</p>
+        <ul class="dropdown-menu">
+            <li><a href="index.html">Карточки товаров</a></li>
+            <li><a href="media.html">MediaElements(вы тут)</a></li>
+            <li><a href="#">???</a></li>
+        </ul>
+    </li>
+</ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <center><h3>Остановись и посмотри милые видео <з</h3></center>
+
+    <div class="media-player">
+            <div class="video-container">
+                <video id="myVideo">
+                    <!-- Замените src на путь к вашему видео -->
+                    <source src="img/Kitten_Cat.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="controls">
+                <button class="play-pause-btn" id="playBtn"></button>
+                <button class="play-pause-btn" id="pauseBtn"></button>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="time-display" id="timeDisplay">0:00 / 0:00</div>
+            </div>
+        </div> 
+    </main>
+
+    <script>
+        // Получаем элементы со страницы
+        const video = document.getElementById('myVideo');
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const timeDisplay = document.getElementById('timeDisplay');
+
+        // Функция для воспроизведения
+        playBtn.addEventListener('click', function() {
+            video.play();
+            playBtn.style.display = 'none';
+            pauseBtn.style.display = 'block';
+        });
+
+        // Функция для паузы
+        pauseBtn.addEventListener('click', function() {
+            video.pause();
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'block';
+        });
+
+        // Обновление прогресс-бара и времени
+        video.addEventListener('timeupdate', function() {
+            // Обновляем прогресс-бар
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = progress + '%';
+            
+            // Обновляем отображение времени
+            const currentMinutes = Math.floor(video.currentTime / 60);
+            const currentSeconds = Math.floor(video.currentTime % 60);
+            const durationMinutes = Math.floor(video.duration / 60);
+            const durationSeconds = Math.floor(video.duration % 60);
+            
+            timeDisplay.textContent = 
+                currentMinutes + ':' + (currentSeconds < 10 ? '0' : '') + currentSeconds + 
+                ' / ' + 
+                durationMinutes + ':' + (durationSeconds < 10 ? '0' : '') + durationSeconds;
+        });
+
+        // Перемотка при клике на прогресс-бар
+        progressContainer.addEventListener('click', function(e) {
+            const rect = progressContainer.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pos * video.duration;
+        });
+
+        // Сброс кнопок при окончании видео
+        video.addEventListener('ended', function() {
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
